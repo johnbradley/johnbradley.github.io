@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="project-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .indent {
+        margin-left: 30px;
+      }
+      .item {
+        margin-bottom: 1em;
+      }
+    </style>
+
+      <template is="dom-repeat" items="{{items}}">
+        <template is="dom-if" if="{{matchesFilter(item)}}">
+          <div class="item">
+            <div><span class="paper-font-body2">{{item.title}}</span></div>
+            <div><span class="indent paper-font-body1">{{item.desc}}</span></div>
+            <template is="dom-if" if="{{hasLink(item)}}">
+              <a href$="{{item.url}}">
+                <span class="indent paper-font-body1">Link</span>
+              </a>
+            </template>
+          </div>
+        </template>
+      </template>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'project-list',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          },
+          typeFilter: {
+            type: String,
+            value: 'current',
+          },
+        },
+        matchesFilter: function(item) {
+          return item.type === this.typeFilter;
+        },
+        hasLink: function(item) {
+          return item.url;
+        },
+        ready: function() {
+          this.items = [
+            {title:'Python DNA/Protein Web App',
+              desc: 'Python REST API and polymer front end for working with DNA/Protein files.',
+              type:'current',},
+            {title:'Learning Polymer',
+              desc: 'Modular approach to html/css/javascript.',
+              type:'current',},
+            {title:'JSON to RDBMS normalized',
+              desc: 'REST server that decomposes JSON into normalized database tables.',
+              type:'current',},
+            {title:'Hexwords',
+              desc: 'JQuery based business card password generator.',
+              url: 'https://github.com/johnbradley/hexwords',
+              type:'past',
+              },
+          ];
+        }
+      });
+    })();
+  </script>
+
+</dom-module>
