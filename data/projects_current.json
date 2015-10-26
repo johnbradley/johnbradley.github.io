@@ -1,0 +1,17 @@
+[{
+  "title": "Polymer/github Blog",
+  "desc": "This blog created with gulp/polymer/js/html/css and stored on github.",
+  "type": "current"
+}, {
+  "title": "Python DNA/Protein Web App",
+  "desc": "Python REST API and polymer front end for working with DNA/Protein files.",
+  "type": "current"
+}, {
+  "title": "Learning Polymer",
+  "desc": "Modular approach to html/css/javascript.",
+  "type": "current"
+}, {
+  "title": "JSON to RDBMS normalized",
+  "desc": "REST server that decomposes JSON into normalized database tables.",
+  "type": "current"
+}]

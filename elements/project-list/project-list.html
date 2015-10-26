@@ -13,21 +13,22 @@
         margin-bottom: 1em;
       }
     </style>
-
+    <iron-ajax
+        url="{{url}}"
+        params="{}"
+        handle-as="text"
+        on-response="handleResponse" auto></iron-ajax>
       <template is="dom-repeat" items="{{items}}">
-        <template is="dom-if" if="{{matchesFilter(item)}}">
-          <div class="item">
-            <div><span class="paper-font-body2">{{item.title}}</span></div>
-            <div><span class="indent paper-font-body1">{{item.desc}}</span></div>
-            <template is="dom-if" if="{{hasLink(item)}}">
-              <a href$="{{item.url}}">
-                <span class="indent paper-font-body1">Link</span>
-              </a>
-            </template>
-          </div>
-        </template>
+        <div class="item">
+          <div><span class="paper-font-body2">{{item.title}}</span></div>
+          <div><span class="indent paper-font-body1">{{item.desc}}</span></div>
+          <template is="dom-if" if="{{hasLink(item)}}">
+            <a href$="{{item.url}}">
+              <span class="indent paper-font-body1">Link</span>
+            </a>
+          </template>
+        </div>
       </template>
-
   </template>
 
   <script>
@@ -37,6 +38,10 @@
       Polymer({
         is: 'project-list',
         properties: {
+          url: {
+            type: String,
+            value: '',
+          },
           items: {
             type: Array,
             notify: true,
@@ -46,48 +51,11 @@
             value: 'current',
           },
         },
-        matchesFilter: function(item) {
-          return item.type === this.typeFilter;
-        },
         hasLink: function(item) {
           return item.url;
         },
-        ready: function() {
-          this.items = [
-            {title:'Polymer/github Blog',
-              desc: 'This blog created with gulp/polymer/js/html/css and stored on github.',
-              type:'current',},
-            {title:'Python DNA/Protein Web App',
-              desc: 'Python REST API and polymer front end for working with DNA/Protein files.',
-              type:'current',},
-            {title:'Learning Polymer',
-              desc: 'Modular approach to html/css/javascript.',
-              type:'current',},
-            {title:'JSON to RDBMS normalized',
-              desc: 'REST server that decomposes JSON into normalized database tables.',
-              type:'current',},
-            {title:'Hexwords',
-              desc: 'JQuery based business card password generator.',
-              url: 'https://github.com/johnbradley/hexwords',
-              type:'past',
-              },
-              {title:'Intly',
-                desc: 'Antlr LL* parser and interpreter for integer based scripting language.',
-                url: 'https://github.com/johnbradley/Intly',
-                type:'past',
-                },
-                {title:'Robot Eye',
-                  desc: 'Servo Eye controled via controller and via python webserver.',
-                  url: 'https://www.youtube.com/watch?v=H6P35rm8d48',
-                  type:'past',
-                },
-                {title:'Embedded RFID Webserver',
-                  desc: 'Playing around with embedded C programming webserver and RFID reader.',
-                  url: 'https://www.youtube.com/watch?v=V-lJqClpMoA',
-                  type:'past',
-                },
-
-          ];
+        handleResponse: function(somedata) {
+          this.items = JSON.parse(somedata.detail.response);
         }
       });
     })();

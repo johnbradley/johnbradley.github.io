@@ -7,11 +7,14 @@
         display: block;
       }
     </style>
-    <ul>
-      <template is="dom-repeat" items="{{items}}">
-        <li><a href$="{{item.url}}" class="paper-font-body1">{{item.title}}</a></li>
-      </template>
-    </ul>
+    <iron-ajax
+        url="{{url}}"
+        params="{}"
+        handle-as="text"
+        on-response="handleResponse" auto></iron-ajax>
+    <template is="dom-repeat" items="{{items}}">
+        <div><a href$="{{item.url}}" class="paper-font-body1">{{item.title}}</a></div>
+    </template>
   </template>
 
   <script>
@@ -21,19 +24,18 @@
       Polymer({
         is: 'link-list',
         properties: {
+          url: {
+            type: String,
+            value: '',
+          },
           items: {
             type: Array,
             notify: true,
-          }
+          },
         },
-        ready: function() {
-          this.items = [
-            { title: 'My github account.',
-              url:'https://github.com/johnbradley'},
-            { title: 'My older website.',
-              url: 'http://makerjohn.com/'},
-          ];
-        }
+        handleResponse: function(somedata) {
+          this.items = JSON.parse(somedata.detail.response);
+        },
       });
     })();
   </script>
