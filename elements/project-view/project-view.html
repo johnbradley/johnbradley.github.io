@@ -1,0 +1,62 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<script src="../../bower_components/lodash/lodash.js"></script>
+
+<dom-module id="project-view">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <iron-ajax
+        url="{{url}}"
+        params="{}"
+        handle-as="text"
+        on-response="handleResponse" auto></iron-ajax>
+    <div><span class="paper-font-body2">{{item.title}}</span></div>
+    <div><span class="paper-font-body1">{{item.desc}}</span><span>{{index}}</span></div>
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'project-view',
+        properties: {
+          url: {
+            type: String,
+            value: '',
+          },
+          items: {
+            type: Array,
+            notify: true,
+          },
+          item: {
+            type: Object,
+            notify: true,
+          },
+          index: {
+            type: String,
+            notify: true,
+            observer: '_indexChanged',
+          },
+        },
+        _indexChanged: function() {
+            this.loadData();
+        },
+        handleResponse: function(somedata) {
+          this.items = JSON.parse(somedata.detail.response);
+          this.loadData();
+        },
+        loadData: function() {
+          if (this.index && this.items) {
+            this.item = _.findWhere(this.items, { 'key': this.index});
+          
+          }
+        },
+      });
+    })();
+  </script>
+
+</dom-module>

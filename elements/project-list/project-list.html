@@ -6,27 +6,37 @@
       :host {
         display: block;
       }
-      .indent {
-        margin-left: 30px;
-      }
+
       .item {
-        margin-bottom: 1em;
+        padding: 0.5em;
+        display: inline-block;
+        position: relative;
+        width: 100%;
       }
+
+      .item > paper-ripple {
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
     </style>
     <iron-ajax
         url="{{url}}"
         params="{}"
         handle-as="text"
         on-response="handleResponse" auto></iron-ajax>
-      <template is="dom-repeat" items="{{items}}">
-        <div class="item">
-          <div><span class="paper-font-body2">{{item.title}}</span></div>
-          <div><span class="indent paper-font-body1">{{item.desc}}</span></div>
-          <template is="dom-if" if="{{hasLink(item)}}">
-            <a href$="{{item.url}}">
-              <span class="indent paper-font-body1">Link</span>
-            </a>
-          </template>
+      <template is="dom-repeat" id="itemList" items="{{items}}" filter="checkType">
+        <div>
+          <div class="item" fit on-click="handleClick" data-index="[[index]]">
+            <div><span class="paper-font-body2">{{item.title}}</span></div>
+            <div><span class="paper-font-body1">{{item.desc}}</span></div>
+            <template is="dom-if" if="{{hasLink(item)}}">
+              <a href$="{{item.url}}">
+                <span class="paper-font-body1">Link</span>
+              </a>
+            </template>
+            <paper-ripple></paper-ripple>
+          </div>
         </div>
       </template>
   </template>
@@ -50,6 +60,13 @@
             type: String,
             value: 'current',
           },
+        },
+        checkType: function(item) {
+          return item.type === this.typeFilter;
+        },
+        handleClick: function(e) {
+          var item = this.$.itemList.itemForElement(e.target);
+          page('/projects/' + item.key);
         },
         hasLink: function(item) {
           return item.url;
