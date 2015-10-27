@@ -12,14 +12,13 @@
         params="{}"
         handle-as="text"
         on-response="handleResponse" auto></iron-ajax>
-    <ul>
       <template is="dom-repeat" items="{{items}}">
-        <li>
+        <div>
           <span class="paper-font-body2">{{item.term}}</span>
+          <span class="paper-font-body2">-</span>
           <span class="paper-font-body1">{{item.def}}</span>
-        </li>
+        </dib>
       </template>
-    </ul>
   </template>
 
   <script>

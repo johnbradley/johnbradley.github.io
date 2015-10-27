@@ -14,7 +14,14 @@
         handle-as="text"
         on-response="handleResponse" auto></iron-ajax>
     <div><span class="paper-font-body2">{{item.title}}</span></div>
-    <div><span class="paper-font-body1">{{item.desc}}</span><span>{{index}}</span></div>
+    <div><span class="paper-font-body1">{{item.desc}}</span></div>
+    <div><span class="paper-font-body1">{{item.details}}</span></div>
+    <template is="dom-if" if="{{hasLink(item)}}">
+      <a href$="{{item.url}}">
+        <span class="paper-font-body1">{{item.url}}</span>
+      </a>
+    </template>
+
   </template>
 
   <script>
@@ -49,10 +56,12 @@
           this.items = JSON.parse(somedata.detail.response);
           this.loadData();
         },
+        hasLink: function(item) {
+          return item.url;
+        },
         loadData: function() {
           if (this.index && this.items) {
             this.item = _.findWhere(this.items, { 'key': this.index});
-          
           }
         },
       });

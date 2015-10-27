@@ -7,6 +7,7 @@
   "key": "bioseq",
   "title": "Python DNA/Protein Web App",
   "desc": "Python REST API and polymer front end for working with DNA/Protein files.",
+  "details": "Allows a user to search entrez and download sequences and view results of processing that data.",
   "type": "current"
 }, {
   "key": "learnpolymer",

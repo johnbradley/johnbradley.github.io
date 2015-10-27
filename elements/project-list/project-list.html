@@ -9,15 +9,22 @@
 
       .item {
         padding: 0.5em;
+        padding-left: 1em;
         display: inline-block;
         position: relative;
         width: 100%;
+        cursor: pointer;
+        cursor: hand;
       }
 
-      .item > paper-ripple {
-        border-radius: 2px;
-        overflow: hidden;
+      .item:hover {
+        background: var(--paper-light-blue-50);
       }
+
+      .item:active {
+        background: var(--light-primary-color);
+      }
+
 
     </style>
     <iron-ajax
@@ -30,12 +37,6 @@
           <div class="item" fit on-click="handleClick" data-index="[[index]]">
             <div><span class="paper-font-body2">{{item.title}}</span></div>
             <div><span class="paper-font-body1">{{item.desc}}</span></div>
-            <template is="dom-if" if="{{hasLink(item)}}">
-              <a href$="{{item.url}}">
-                <span class="paper-font-body1">Link</span>
-              </a>
-            </template>
-            <paper-ripple></paper-ripple>
           </div>
         </div>
       </template>
@@ -67,9 +68,6 @@
         handleClick: function(e) {
           var item = this.$.itemList.itemForElement(e.target);
           page('/projects/' + item.key);
-        },
-        hasLink: function(item) {
-          return item.url;
         },
         handleResponse: function(somedata) {
           this.items = JSON.parse(somedata.detail.response);
