@@ -82,4 +82,22 @@
 }, {
   "term": "Template Strand",
   "def": "Strand that is used to build RNA(is inverse of RNA)."
-}]
+}, {
+  "term": "Archaea",
+  "def": "Weird lifeform that lives in bottom of ocean kind of like bacterial kind of like eukaryotes(people/plants)."
+}, {
+  "term": "Start Codon",
+  "def": "AUG"
+}, {
+  "term": "Stop Codon",
+  "def": "UAG, UAA, or UGA (for RNA)"
+}, {
+  "term": "Protease",
+  "def": "Break(hydrolyze) down proteins."
+}, {
+  "term": "Myoglobin",
+  "def": "Oxygen carrying pigment of muscle tissue."
+  }, {
+    "term": "Isoform",
+    "def": "Functionally similar proteins with not quite identical amino acid content."
+    }]
