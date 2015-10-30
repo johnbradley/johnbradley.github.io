@@ -1,1 +1,1 @@
-cp -r ../blog/dist/* .
+cp -r ../myblog/dist/* .

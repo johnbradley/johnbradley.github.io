@@ -49,9 +49,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-
-
-
 <style is="custom-style">/*Polymer includes a shim for CSS Custom Properties that we can use for application theming.Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to playwith changing the colors used or generate your own palette of colours at MaterialPalette.com.See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-detailsfor further information on custom CSS properties.*//* Application theme */:root {--dark-primary-color:#0288D1;--default-primary-color:#03A9F4;--light-primary-color:#B3E5FC;--text-primary-color:#FFFFFF;--accent-color:#FFC107;--primary-background-color: #B3E5FC;--primary-text-color:#212121;--secondary-text-color:#727272;--disabled-text-color:#BDBDBD;--divider-color:#B6B6B6;/* Components *//* paper-drawer-panel */--drawer-menu-color:#ffffff;--drawer-border-color:1px solid #ccc;--drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);/* paper-menu */--paper-menu-background-color: #fff;--menu-link-color:#111111;/* paper-input */--paper-input-container-color:rgba(255, 255, 255, 0.64);--paper-input-container-focus-color: rgba(255, 255, 255, 1);--paper-input-container-input-color: #fff;}/* General styles */#drawerToolbar {color: var(--secondary-text-color);background-color: var(--drawer-menu-color);border-bottom: var(--drawer-toolbar-border-color);}paper-scroll-header-panel {height: 100%;}paper-material {border-radius: 2px;height: 100%;padding: 16px 0 16px 0;width: calc(98.66% - 16px);margin: 16px auto;background: white;}paper-menu iron-icon {margin-right: 33px;opacity: 0.54;}.paper-menu > .iron-selected {color: var(--default-primary-color);}paper-menu a {text-decoration: none;color: var(--menu-link-color);display: -ms-flexbox;display: -webkit-flex;display: flex;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;-ms-flex-align: center;-webkit-align-items: center;align-items: center;font-family: 'Roboto', 'Noto', sans-serif;-webkit-font-smoothing: antialiased;text-rendering: optimizeLegibility;font-size: 14px;font-weight: 400;line-height: 24px;min-height: 48px;padding: 0 16px;}paper-toolbar.tall .app-name {font-size: 40px;font-weight: 300;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}#mainToolbar .middle-container{height: 100%;margin-left: 48px;}#mainToolbar:not(.tall) .middle {font-size: 18px;padding-bottom: 0;}#mainToolbar .bottom {margin-left: 48px;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}/* Height of the scroll area */.content {height: 900px;}/* Breakpoints *//* Small */@media (max-width: 600px) {paper-material {--menu-container-display: none;width: calc(97.33% - 32px);padding-left: 16px;padding-right: 16px;}paper-toolbar.tall .app-name {font-size: 24px;font-weight: 400;}#drawer .paper-toolbar {margin-left: 16px;}#overlay {min-width: 360px;}.bg {background: white;}}/* Tablet+ */@media (min-width: 601px) {paper-material {width: calc(98% - 46px);margin-bottom: 32px;padding-left: 30px;padding-right: 30px;}#drawer.paper-drawer-panel > [drawer] {border-right: 1px solid rgba(0, 0, 0, 0.14);}iron-pages {padding: 48px 62px;}}/* Material Design Adaptive Breakpoints *//*Below you'll find CSS media queries based on the breakpoint guidancepublished by the Material Design team. You can choose to use, customiseor remove these breakpoints based on your needs.http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints*//* mobile-small */@media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }/* mobile-large */@media all and (min-width: 361px) and (orientation: portrait) { }/* mobile-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* mobile-large-landscape */@media all and (min-width: 481px) and (orientation: landscape) { }/* tablet-small-landscape */@media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }/* tablet-large-landscape */@media all and (min-width: 961px) and (orientation: landscape) { }/* tablet-small */@media all and (min-width: 600px) and (orientation: portrait) { }/* tablet-large */@media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }/* desktop-x-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* desktop-x-small */@media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }/* desktop-small-landscape */@media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }/* desktop-small */@media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }/* desktop-medium-landscape */@media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }/* desktop-medium */@media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }/* desktop-large */@media all and (min-width: 1281px) and (max-width: 1600px) { }/* desktop-xlarge */@media all and (min-width: 1601px) and (max-width: 1920px) { }</style><style is="custom-style" include="shared-styles"></style></head><body unresolved="" class="fullbleed layout vertical"><div hidden="" by-vulcanize=""><dom-module id="iron-icon" assetpath="bower_components/iron-icon/">
 
   <style>:host {@apply(--layout-inline);@apply(--layout-center-center);position: relative;vertical-align: middle;fill: var(--iron-icon-fill-color, currentcolor);stroke: var(--iron-icon-stroke-color, none);width: var(--iron-icon-width, 24px);height: var(--iron-icon-height, 24px);}</style>
@@ -355,15 +352,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </dom-module>
 
 <dom-module id="paper-drawer-panel" assetpath="bower_components/paper-drawer-panel/">
-  <style>/**@licenseCopyright (c) 2015 The Polymer Project Authors. All rights reserved.This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txtThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txtThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txtCode distributed by Google as part of the polymer project is alsosubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt*/:host {display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow: hidden;}iron-selector > #drawer {position: absolute;top: 0;left: 0;height: 100%;background-color: white;-moz-box-sizing: border-box;box-sizing: border-box;@apply(--paper-drawer-panel-drawer-container);}.transition > #drawer {transition: -webkit-transform ease-in-out 0.3s, width ease-in-out 0.3s, visibility 0.3s;transition: transform ease-in-out 0.3s, width ease-in-out 0.3s, visibility 0.3s;}.left-drawer > #drawer {@apply(--paper-drawer-panel-left-drawer-container);}.right-drawer > #drawer {left: auto;right: 0;@apply(--paper-drawer-panel-right-drawer-container);}iron-selector > #main {position: absolute;top: 0;right: 0;bottom: 0;@apply(--paper-drawer-panel-main-container);}.transition > #main {transition: left ease-in-out 0.3s, padding ease-in-out 0.3s;}.right-drawer > #main {left: 0;}.right-drawer.transition > #main {transition: right ease-in-out 0.3s, padding ease-in-out 0.3s;}#main > ::content > [main] {height: 100%;}#drawer > ::content > [drawer] {height: 100%;}#scrim {position: absolute;top: 0;right: 0;bottom: 0;left: 0;visibility: hidden;opacity: 0;transition: opacity ease-in-out 0.38s, visibility ease-in-out 0.38s;background-color: rgba(0, 0, 0, 0.3);}.narrow-layout > #drawer {will-change: transform;}.narrow-layout > #drawer.iron-selected {box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);}.right-drawer.narrow-layout > #drawer.iron-selected {box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);}.narrow-layout > #drawer > ::content > [drawer] {border: 0;}.left-drawer.narrow-layout > #drawer:not(.iron-selected) {-webkit-transform: translateX(-100%);transform: translateX(-100%);}.right-drawer.narrow-layout > #drawer:not(.iron-selected) {left: auto;visibility: hidden;-webkit-transform: translateX(100%);transform: translateX(100%);}.right-drawer.narrow-layout.dragging > #drawer:not(.iron-selected),.right-drawer.narrow-layout.peeking > #drawer:not(.iron-selected) {visibility: visible;}.narrow-layout > #main {padding: 0;}.right-drawer.narrow-layout > #main {left: 0;right: 0;}.narrow-layout > #main:not(.iron-selected) > #scrim,.dragging > #main > #scrim {visibility: visible;opacity: var(--paper-drawer-panel-scrim-opacity, 1);}.narrow-layout > #main > * {margin: 0;min-height: 100%;left: 0;right: 0;-moz-box-sizing: border-box;box-sizing: border-box;}iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {display: none;}</style>
-
   <template>
+    <style>:host {display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow: hidden;}iron-selector > #drawer {position: absolute;top: 0;left: 0;height: 100%;background-color: white;-moz-box-sizing: border-box;box-sizing: border-box;@apply(--paper-drawer-panel-drawer-container);}.transition > #drawer {transition: -webkit-transform ease-in-out 0.3s, width ease-in-out 0.3s, visibility 0.3s;transition: transform ease-in-out 0.3s, width ease-in-out 0.3s, visibility 0.3s;}.left-drawer > #drawer {@apply(--paper-drawer-panel-left-drawer-container);}.right-drawer > #drawer {left: auto;right: 0;@apply(--paper-drawer-panel-right-drawer-container);}iron-selector > #main {position: absolute;top: 0;right: 0;bottom: 0;@apply(--paper-drawer-panel-main-container);}.transition > #main {transition: left ease-in-out 0.3s, padding ease-in-out 0.3s;}.right-drawer > #main {left: 0;}.right-drawer.transition > #main {transition: right ease-in-out 0.3s, padding ease-in-out 0.3s;}#main > ::content > [main] {height: 100%;}#drawer > ::content > [drawer] {height: 100%;}#scrim {position: absolute;top: 0;right: 0;bottom: 0;left: 0;visibility: hidden;opacity: 0;transition: opacity ease-in-out 0.38s, visibility ease-in-out 0.38s;background-color: rgba(0, 0, 0, 0.3);@apply(--paper-drawer-panel-scrim);}.narrow-layout > #drawer {will-change: transform;}.narrow-layout > #drawer.iron-selected {box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);}.right-drawer.narrow-layout > #drawer.iron-selected {box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);}.narrow-layout > #drawer > ::content > [drawer] {border: 0;}.left-drawer.narrow-layout > #drawer:not(.iron-selected) {-webkit-transform: translateX(-100%);transform: translateX(-100%);}.right-drawer.narrow-layout > #drawer:not(.iron-selected) {left: auto;visibility: hidden;-webkit-transform: translateX(100%);transform: translateX(100%);}.right-drawer.narrow-layout.dragging > #drawer:not(.iron-selected),.right-drawer.narrow-layout.peeking > #drawer:not(.iron-selected) {visibility: visible;}.narrow-layout > #main {padding: 0;}.right-drawer.narrow-layout > #main {left: 0;right: 0;}.narrow-layout > #main:not(.iron-selected) > #scrim,.dragging > #main > #scrim {visibility: visible;opacity: var(--paper-drawer-panel-scrim-opacity, 1);}.narrow-layout > #main > * {margin: 0;min-height: 100%;left: 0;right: 0;-moz-box-sizing: border-box;box-sizing: border-box;}iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {display: none;}</style>
+
     <iron-media-query id="mq" on-query-matches-changed="_onQueryMatchesChanged" query="[[_computeMediaQuery(forceNarrow, responsiveWidth)]]">
     </iron-media-query>
 
     <iron-selector attr-for-selected="id" class$="[[_computeIronSelectorClass(narrow, transition, dragging, rightDrawer, peeking)]]" activate-event="" selected="[[selected]]">
 
-      <div id="main" style$="[[_computeMainStyle(narrow, rightDrawer, drawerWidth)]]">
+      <div id="main" style$="[[_computeMainStyle(narrow, rightDrawer, drawerWidth)]]" on-transitionend="_onMainTransitionEnd">
         <content select="[main]"></content>
         <div id="scrim" on-tap="closeDrawer"></div>
       </div>
@@ -375,8 +372,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-selector>
   </template>
 
-</dom-module>
-
+  </dom-module>
 <dom-module id="paper-ripple" assetpath="bower_components/paper-ripple/">
 
   
@@ -492,6 +488,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 </dom-module>
 
+<dom-module id="iron-localstorage" assetpath="bower_components/iron-localstorage/"></dom-module>
+<dom-module id="google-youtube" assetpath="bower_components/google-youtube/">
+  <style>:host {display: block;}:host([fluid]) {width: 100%;max-width: 100%;position: relative;}:host([fluid]) iframe,:host([fluid]) #thumbnail {vertical-align: bottom;position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;}#container {max-width: 100%;max-height: 100%;}#thumbnail {width: 100%;height: 100%;cursor: pointer;}/* Some browsers will refuse to play videos with 'display: none' set, so position the video well offscreen instead. */#playtest {position: absolute;top: -9999px;left: -9999px;}</style>
+
+  <template>
+    <div id="container" style$="{{_computeContainerStyle(width, height)}}">
+      <template is="dom-if" if="{{thumbnail}}">
+        <img id="thumbnail" src$="{{thumbnail}}" title="YouTube video thumbnail." alt="YouTube video thumbnail." on-tap="_handleThumbnailTap">
+      </template>
+
+      <template is="dom-if" if="{{!thumbnail}}">
+        <google-youtube-api on-api-load="_apiLoad"></google-youtube-api>
+      </template>
+
+      
+      <iron-localstorage name="google-youtube-playsupported" value="{{_playsupportedLocalStorage}}" on-iron-localstorage-load="_useExistingPlaySupportedValue" on-iron-localstorage-load-empty="_determinePlaySupported">
+      </iron-localstorage>
+
+      <div id="player"></div>
+    </div>
+  </template>
+</dom-module>
+
 <dom-module id="shared-styles" assetpath="styles/"><template><style>.page-title {@apply(--paper-font-display2);}@media (max-width: 600px) {.page-title {font-size: 24px!important;}}</style></template></dom-module><dom-module id="project-list" assetpath="elements/project-list/">
   <template>
     <style>:host {display: block;}.item {padding: 0.5em;padding-left: 1em;display: inline-block;position: relative;width: 100%;cursor: pointer;cursor: hand;}.item:hover {background: var(--paper-light-blue-50);}.item:active {background: var(--light-primary-color);}</style>
@@ -510,18 +529,147 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="project-view" assetpath="elements/project-view/">
   <template>
     <style>:host {display: block;}</style>
+
+
+
     <iron-ajax url="{{url}}" params="{}" handle-as="text" on-response="handleResponse" auto=""></iron-ajax>
     <div><span class="paper-font-body2">{{item.title}}</span></div>
     <div><span class="paper-font-body1">{{item.desc}}</span></div>
-    <div><span class="paper-font-body1">{{item.details}}</span></div>
-    <template is="dom-if" if="{{hasLink(item)}}">
-      <a href$="{{item.url}}">
-        <span class="paper-font-body1">{{item.url}}</span>
-      </a>
+    <project-item-view viewname$="{{item.view}}"></project-item-view>
+
+    <template is="dom-repeat" id="itemList" items="{{item.content}}" as="content">
+      <template is="dom-if" if="{{content.img}}">
+        <div><img style="width:50%;" src$="{{content.img}}"></div>
+      </template>
+      <template is="dom-if" if="{{content.text}}">
+        <div><span class="paper-font-body1">{{content.text}}</span></div>
+      </template>
+      <template is="dom-if" if="{{content.link}}">
+        <div><a href$="{{content.link}}">{{content.label}}</a></div>
+      </template>
+      <template is="dom-if" if="{{content.youtube}}">
+         <google-youtube video-id="[[content.youtube]]" height="270px" width="480px" rel="0" start="5" autoplay="0">
+            </google-youtube>
+        </template>
+
     </template>
+
+
 
   </template>
 
+  </dom-module>
+<dom-module id="project-item-view" assetpath="elements/project-view/">
+  <template>
+    <div id="dynamic"></div>
+  </template>
+  </dom-module>
+<dom-module id="blog-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <p>
+        <span class="paper-font-body1">
+          The goal of this was to learn more about polymer.
+          The free github hosting doesn't refresh if index.html isn't changed every time.
+          To work around this I modified gulpfile.js to add a comment timestamp to index.html.
+          Using polymer for a blog like this is a little silly as it is mostly static data.
+          The project was created with yeoman: 'yo polymer'.
+          Using bower as a dependancy manager.
+        </span>
+      </p>
+      <button-link link="https://github.com/johnbradley/myblog">
+        View on github.
+      </button-link>
+  </section>
+  </template>
+  </dom-module>
+<dom-module id="bioseq-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <p class="paper-font-body1">
+      The site uses iron-ajax to fetch data from the Python REST API.
+      </p>
+      <button-link link="https://github.com/johnbradley/seq_exp_web">
+        View frontend project on github.
+      </button-link>
+      <p class="paper-font-body1">
+        The site stores project info in a relational database(postgres right now).
+        Considering changing this into a directory structure to better store downloading genbank files.
+      </p>
+      <button-link link="https://github.com/johnbradley/seq_exp_rest">
+        View Python flask project on github.
+      </button-link>
+  </section>
+  </template>
+  </dom-module>
+<dom-module id="jsontodb-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <p>
+        <span class="paper-font-body1">
+          This is just an idea at this point.
+          The functionality will be similiar to elasticsearch.
+          You just send in json and it will be broken apart and types/structure will be inferred.
+          The first pass will be just to come up with tables based on json files.
+        </span>
+      </p>
+  </section>
+  </template>
+  </dom-module>
+<dom-module id="hexwords-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <img src="images/password_card.jpg" width="50%">
+      <div>
+        <a href="https://rawgit.com/johnbradley/hexwords/master/index.html">Try it out.</a>
+      </div>
+      <div>
+        <a href="http://github.com/johnbradley/hexwords">View source on github.</a>
+      </div>
+  </section>
+  </template>
+  </dom-module>
+<dom-module id="intly-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <div>
+        Example code to print sum of numbers from N to 1:
+        <pre>        main(target) {
+          result = 0;
+          while target {
+            result += target
+            target = target - 1;
+          }
+          return result;
+        }
+        </pre>
+        This was a fun project creating a tiny language to play with <a href="http://www.antlr.org/">Antlr</a><a>.
+        All data types are integer. All functions are passed and return integers.
+        The value returned by the main method is printed to std out.
+      </a></div><a>
+      <button-link link="https://github.com/johnbradley/Intly">
+        View on github
+      </button-link>
+
+  </a></section><a>
+  </a></template>
+  </dom-module>
+<dom-module id="rfidserver-item-view" assetpath="elements/project-items/">
+  <template>
+    <section>
+      <google-youtube video-id="V-lJqClpMoA" height="270px" width="480px" rel="0" start="5" autoplay="0">
+      </google-youtube>
+      <p>
+        Built with a <a href="https://www.lpcware.com/lpcxpresso">LPC1769</a> and a RFID reading board.
+        The LPC1769 was programmed in C with a very simplified webserver.
+      </p>
+  </section>
+  </template>
+  </dom-module>
+<dom-module id="button-link" assetpath="elements/button-link/">
+  <template>
+      <paper-button raised="" on-click="handleClick"><content></content></paper-button>
+  </template>
   </dom-module>
 <dom-module id="definition-list" assetpath="elements/definition-list/">
   <template>
@@ -547,4 +695,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   </dom-module>
-</div><span id="browser-sync-binding"></span><template is="dom-bind" id="app"><paper-drawer-panel id="paperDrawerPanel"><paper-scroll-header-panel drawer="" fixed=""><paper-toolbar id="drawerToolbar"><span class="paper-font-title">Menu</span></paper-toolbar><paper-menu class="list" attr-for-selected="data-route" selected="[[route]]"><a data-route="current" href="/" on-click="onDataRouteClick"><iron-icon icon="inbox"></iron-icon><span>Current</span></a> <a data-route="past" href="/past" on-click="onDataRouteClick"><iron-icon icon="turned-in"></iron-icon><span>Past</span></a> <a data-route="definitions" href="/definitions" on-click="onDataRouteClick"><iron-icon icon="list"></iron-icon><span>Definitions</span></a> <a data-route="links" href="/links" on-click="onDataRouteClick"><iron-icon icon="link"></iron-icon><span>Links</span></a></paper-menu></paper-scroll-header-panel><paper-scroll-header-panel main="" fixed=""><paper-toolbar id="mainToolbar"><paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle=""></paper-icon-button><div class="middle middle-container center horizontal layout"><img style="width:30px; border-radius: 10px;" src="images/john.jpg"> <span>&nbsp;&nbsp;</span><div class="app-name">Code and Projects</div></div></paper-toolbar><div class="content"><iron-pages attr-for-selected="data-route" selected="{{route}}"><section data-route="current"><paper-material elevation="1"><h2 class="paper-font-headline">Current</h2><project-list url="/data/projects.json" type-filter="current"></project-list></paper-material></section><section data-route="past"><paper-material elevation="1"><h2 class="paper-font-headline">Past Projects</h2><project-list url="/data/projects.json" type-filter="past"></project-list></paper-material></section><section data-route="projectview"><paper-material elevation="1"><h2 class="paper-font-headline">Project Info</h2><project-view url="/data/projects.json" index="{{params.name}}"></project-view></paper-material></section><section data-route="definitions"><paper-material elevation="1"><h2 class="paper-font-headline">Definitions</h2><definition-list url="/data/definitions.json"></definition-list></paper-material></section><section data-route="links"><paper-material elevation="1"><h2 class="paper-font-headline">Links</h2><link-list url="/data/links.json"></link-list></paper-material></section></iron-pages></div></paper-scroll-header-panel></paper-drawer-panel></template><script src="index.build.js"></script></body></html><!--Generated on:Tue Oct 27 2015 12:59:38 GMT-0400 (Eastern Daylight Time)-->
+</div><span id="browser-sync-binding"></span><template is="dom-bind" id="app"><paper-drawer-panel id="paperDrawerPanel"><paper-scroll-header-panel drawer="" fixed=""><paper-toolbar id="drawerToolbar"><span class="paper-font-title">Menu</span></paper-toolbar><paper-menu class="list" attr-for-selected="data-route" selected="[[route]]"><a data-route="current" href="/" on-click="onDataRouteClick"><iron-icon icon="inbox"></iron-icon><span>Current</span></a> <a data-route="past" href="/past" on-click="onDataRouteClick"><iron-icon icon="turned-in"></iron-icon><span>Past</span></a> <a data-route="definitions" href="/definitions" on-click="onDataRouteClick"><iron-icon icon="list"></iron-icon><span>Definitions</span></a> <a data-route="links" href="/links" on-click="onDataRouteClick"><iron-icon icon="link"></iron-icon><span>Links</span></a></paper-menu></paper-scroll-header-panel><paper-scroll-header-panel main="" fixed=""><paper-toolbar id="mainToolbar"><paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle=""></paper-icon-button><div class="middle middle-container center horizontal layout"><img style="width:30px; border-radius: 10px;" src="images/john.jpg"> <span>&nbsp;&nbsp;</span><div class="app-name">Code and Projects</div></div></paper-toolbar><div class="content"><iron-pages attr-for-selected="data-route" selected="{{route}}"><section data-route="current"><paper-material elevation="1"><h2 class="paper-font-headline">Current</h2><project-list url="/data/projects.json" type-filter="current"></project-list></paper-material></section><section data-route="past"><paper-material elevation="1"><h2 class="paper-font-headline">Past Projects</h2><project-list url="/data/projects.json" type-filter="past"></project-list></paper-material></section><section data-route="projectview"><paper-material elevation="1"><h2 class="paper-font-headline">Project Info</h2><project-view url="/data/projects.json" index="{{params.name}}"></project-view></paper-material></section><section data-route="definitions"><paper-material elevation="1"><h2 class="paper-font-headline">Definitions</h2><definition-list url="/data/definitions.json"></definition-list></paper-material></section><section data-route="links"><paper-material elevation="1"><h2 class="paper-font-headline">Links</h2><link-list url="/data/links.json"></link-list></paper-material></section></iron-pages></div></paper-scroll-header-panel></paper-drawer-panel></template><script src="index.build.js"></script></body></html>
