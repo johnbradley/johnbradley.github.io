@@ -59,6 +59,7 @@ Polymer({is:"hexwords-item-view"});
 Polymer({is:"intly-item-view"});
 Polymer({is:"roboteye-item-view"});
 Polymer({is:"rfidserver-item-view"});
+Polymer({is:"learnbio-item-view"});
 Polymer({is:"button-link",properties:{link:{type:String,value:""}},handleClick:function(){window.location.href=this.link}});
 !function(){"use strict";Polymer({is:"definition-list",properties:{url:{type:String,value:""},items:{type:Array,notify:!0}},handleResponse:function(e){this.items=JSON.parse(e.detail.response)}})}();
 !function(){"use strict";Polymer({is:"link-list",properties:{url:{type:String,value:""},items:{type:Array,notify:!0}},handleResponse:function(e){this.items=JSON.parse(e.detail.response)}})}();
